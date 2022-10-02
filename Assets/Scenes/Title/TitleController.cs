@@ -3,24 +3,25 @@ using UnityEngine.UI;
 
 public class TitleController : MonoBehaviour
 {
-  public Button NewGameBtn, LoadGameBtn, ExitGameBtn, SettingsBtn;
-
   void Start()
   {
     var newGameBtn = GameObject.Find("b_new").GetComponent<Button>();
-    NewGameBtn.onClick.AddListener(() =>
+    newGameBtn.onClick.AddListener(() =>
     {
       System.Console.WriteLine("New Game");
     });
-    LoadGameBtn.onClick.AddListener(() =>
+    var loadGameBtn = GameObject.Find("b_load").GetComponent<Button>();
+    loadGameBtn.onClick.AddListener(() =>
     {
       GlobalManagement.manager.LoadScene("GameLoad");
     });
-    ExitGameBtn.onClick.AddListener(() =>
+    var exitGameBtn = GameObject.Find("b_exit").GetComponent<Button>();
+    exitGameBtn.onClick.AddListener(() =>
     {
       Application.Quit();
     });
-    SettingsBtn.onClick.AddListener(() =>
+    var settingsBtn = GameObject.Find("b_settings").GetComponent<Button>();
+    settingsBtn.onClick.AddListener(() =>
     {
       GlobalManagement.manager.LoadScene("Settings");
     });
